@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb45c095-e5ab-453a-8039-ec7ccd684681" name="Default Changelist" comment="" />
+    <list default="true" id="fb45c095-e5ab-453a-8039-ec7ccd684681" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/StobiesPizza.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/css/grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/css/normalize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/css/queries.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/custompizza.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/custompizza.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/custompizza2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/android-chrome-256x256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/browserconfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/favicon-16x16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/favicon-32x32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/mstile-150x150.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/safari-pinned-tab.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/favicons/site.webmanifest" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/1 (2).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/Montreal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/Ottawa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/Toronto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/Vancouver.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/_ionicons_svg_md-alarm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/_ionicons_svg_md-cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/_ionicons_svg_md-infinite.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/_ionicons_svg_md-nutrition.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/app-iPhone.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/back-customers.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/berlin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/customer-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/customer-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/customer-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/download-app-android.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/download-app.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/eight.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/facebook-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/five.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/four.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/hero.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/hero2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/lisbon-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/logo-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/london.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/one.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/san-francisco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/seven.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/six.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/three.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/img/two.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/template/footer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/template/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.sql" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,62 +75,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/custompizza.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="18" lean-forward="true" selection-end-line="82" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/custompizza2.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/database.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="89" column="32" lean-forward="true" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Project/custompizza.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -113,27 +124,6 @@
             <path>
               <item name="StobiesPizza" type="b2602c69:ProjectViewProjectNode" />
               <item name="StobiesPizza" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StobiesPizza" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StobiesPizza" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StobiesPizza" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StobiesPizza" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StobiesPizza" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StobiesPizza" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="StobiesPizza" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StobiesPizza" type="462c0819:PsiDirectoryNode" />
-              <item name="Project" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -204,16 +194,15 @@
       <workItem from="1553097744166" duration="887000" />
       <workItem from="1553275742513" duration="10155000" />
       <workItem from="1553296345862" duration="1084000" />
-      <workItem from="1553547130361" duration="5221000" />
+      <workItem from="1553547130361" duration="5521000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20351000" />
+    <option name="totallyTimeSpent" value="20651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2946309" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -283,7 +272,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Project/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state>
           <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
         </state>
       </provider>
@@ -332,7 +321,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/database.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
+        <state relative-caret-position="1258">
           <caret line="89" column="32" lean-forward="true" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
         </state>
       </provider>
