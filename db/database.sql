@@ -22,6 +22,7 @@ DROP TABLE IF EXISTS `customPizza`;
 DROP TABLE IF EXISTS `preDefinedPizza`;
 DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `orderDetails`;
+DROP TABLE IF EXISTS `pizzaCheese`;
 
 
 CREATE TABLE `address`
@@ -83,6 +84,14 @@ create table `pizzaSize`
 PRIMARY KEY (`pizzaSizeId`)
 );
 
+create table `pizzaCheese`
+(
+pizzaCheeseId integer NOT NULL auto_increment,
+`name`    varchar(45) NOT NULL ,
+ `price` decimal not null,
+PRIMARY KEY (`pizzaCheeseId`)
+);
+
 CREATE TABLE `customPizza`
 (
  `customPizzaId` integer NOT NULL auto_increment,
@@ -90,10 +99,12 @@ CREATE TABLE `customPizza`
  `sauceId`     integer NOT NULL ,
  `pizzaSizeId`   integer  NOT NULL ,
  `Crust`   varchar(30)  NOT NULL ,
+ `pizzaCheeseId` integer NOT NULL ,
 PRIMARY KEY (`customPizzaId`),
 FOREIGN KEY (`toppingId`) REFERENCES `topping` (`toppingId`),
 FOREIGN KEY (`sauceId`) REFERENCES `sauce` (`sauceId`),
-FOREIGN KEY (`pizzaSizeId`) REFERENCES `pizzaSize` (`pizzaSizeId`)
+FOREIGN KEY (`pizzaSizeId`) REFERENCES `pizzaSize` (`pizzaSizeId`),
+FOREIGN KEY (`pizzaCheeseId`) REFERENCES `pizzaCheese` (`pizzaCheeseId`)
 );
 
 CREATE TABLE `preDefinedPizza`

@@ -73,7 +73,7 @@ if ($db_conn->connect_errno) {
     <div class="controls">
         <button type="button" class="btn btn-secondary">Cancel</button>
         <button type="button" class="btn btn-secondary btn-success">Toppings</button>
-        
+
     </div>
 </form>
     </div>

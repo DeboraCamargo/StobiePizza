@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb45c095-e5ab-453a-8039-ec7ccd684681" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Project/custompizza.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/custompizza2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/database.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,13 +34,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project/custompizza.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="50" />
+            <state relative-caret-position="68">
+              <caret line="4" column="18" lean-forward="true" selection-end-line="82" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Project/custompizza2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/database.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="104" column="67" lean-forward="true" selection-start-line="104" selection-start-column="67" selection-end-line="104" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Project/custompizza.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -64,14 +82,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/db/pizzadatabase.sql" />
-        <option value="$PROJECT_DIR$/db/database.sql" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/Project/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/common/template/header.php" />
         <option value="$PROJECT_DIR$/common/template/footer.php" />
-        <option value="$PROJECT_DIR$/Project/custompizza.php" />
         <option value="$PROJECT_DIR$/Project/custompizza.css" />
+        <option value="$PROJECT_DIR$/Project/custompizza.php" />
+        <option value="$PROJECT_DIR$/Project/custompizza2.php" />
+        <option value="$PROJECT_DIR$/db/database.sql" />
       </list>
     </option>
   </component>
@@ -108,6 +127,11 @@
               <item name="StobiesPizza" type="462c0819:PsiDirectoryNode" />
               <item name="common" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="StobiesPizza" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StobiesPizza" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="StobiesPizza" type="b2602c69:ProjectViewProjectNode" />
@@ -183,12 +207,12 @@
       <workItem from="1553097744166" duration="887000" />
       <workItem from="1553275742513" duration="10155000" />
       <workItem from="1553296345862" duration="1084000" />
-      <workItem from="1553547130361" duration="4347000" />
+      <workItem from="1553547130361" duration="4893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19477000" />
+    <option name="totallyTimeSpent" value="20023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -226,13 +250,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/db/pizzadatabase.sql" />
-    <entry file="file://$PROJECT_DIR$/db/database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sources/js/script.js" />
     <entry file="file://$PROJECT_DIR$/vendors/css/ionicons.min.css" />
     <entry file="file://$PROJECT_DIR$/vendors/css/normalize.css" />
@@ -295,17 +312,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Project/custompizza.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Project/custompizza.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/custompizza.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" lean-forward="true" selection-end-line="82" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project/custompizza2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/database.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="104" column="67" lean-forward="true" selection-start-line="104" selection-start-column="67" selection-end-line="104" selection-end-column="67" />
         </state>
       </provider>
     </entry>
