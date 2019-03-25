@@ -1,0 +1,23 @@
+.cmodal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.cmodal-content{
+    width: 600px;
+    margin: auto;
+}
+
+.controls button{
+    width: 150px;
+}
+.controls{
+    margin-top: 15px;
+    text-align: right;
+}
+
+#pizza-crust{
+  border-left: black solid 1px;
+}
