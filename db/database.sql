@@ -12,17 +12,18 @@ GRANT all privileges ON pizzadb.* TO 'group3user'@'::1' IDENTIFIED BY 'Test123!'
 
 USE pizzadb;
 
-DROP TABLE IF EXISTS `address`;
-DROP TABLE IF EXISTS `Profile`;
+DROP TABLE IF EXISTS `orderDetails`;
+DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `userLogin`;
-DROP TABLE IF EXISTS `sauce`;
-DROP TABLE IF EXISTS `topping`;
-DROP TABLE IF EXISTS `pizzaSize`;
+DROP TABLE IF EXISTS `Profile`;
+DROP TABLE IF EXISTS `address`;
 DROP TABLE IF EXISTS `customPizza`;
 DROP TABLE IF EXISTS `preDefinedPizza`;
-DROP TABLE IF EXISTS `orders`;
-DROP TABLE IF EXISTS `orderDetails`;
-DROP TABLE IF EXISTS `pizzaCheese`;
+DROP TABLE IF EXISTS `cheese`;
+Drop Table if EXISTS `crust`;
+DROP TABLE IF EXISTS `sauce`;
+DROP TABLE IF EXISTS `topping`;
+DROP TABLE IF EXISTS `size`;
 
 
 CREATE TABLE `address`
@@ -67,29 +68,36 @@ CREATE TABLE `sauce`
 PRIMARY KEY (`sauceId`)
 );
 
+CREATE TABLE `crust`
+(
+ `crustId` integer NOT NULL auto_increment ,
+ `price` decimal not null,
+ `name`      varchar(45) NOT NULL ,
+PRIMARY KEY (`crustId`)
+);
+
 CREATE TABLE `topping`
 (
  `toppingId` integer NOT NULL auto_increment ,
  `price` decimal not null,
  `name`      varchar(45) NOT NULL ,
- `side`      varchar(45) NOT NULL ,
 PRIMARY KEY (`toppingId`)
 );
 
-create table `pizzaSize`
+create table `size`
 (
-`pizzaSizeId` integer NOT NULL auto_increment,
+`sizeId` integer NOT NULL auto_increment,
  `name`    varchar(45) NOT NULL ,
  `price` decimal not null,
-PRIMARY KEY (`pizzaSizeId`)
+PRIMARY KEY (`sizeId`)
 );
 
-create table `pizzaCheese`
+create table `cheese`
 (
-pizzaCheeseId integer NOT NULL auto_increment,
+`cheeseId` integer NOT NULL auto_increment,
 `name`    varchar(45) NOT NULL ,
  `price` decimal not null,
-PRIMARY KEY (`pizzaCheeseId`)
+PRIMARY KEY (`cheeseId`)
 );
 
 CREATE TABLE `customPizza`
@@ -97,14 +105,15 @@ CREATE TABLE `customPizza`
  `customPizzaId` integer NOT NULL auto_increment,
  `toppingId`   integer NOT NULL ,
  `sauceId`     integer NOT NULL ,
- `pizzaSizeId`   integer  NOT NULL ,
- `Crust`   varchar(30)  NOT NULL ,
- `pizzaCheeseId` integer NOT NULL ,
+ `sizeId`   integer  NOT NULL ,
+ `crustId`   integer  NOT NULL ,
+ `cheeseId` integer NOT NULL ,
 PRIMARY KEY (`customPizzaId`),
 FOREIGN KEY (`toppingId`) REFERENCES `topping` (`toppingId`),
+FOREIGN KEY (`crustId`) REFERENCES `crust` (`crustId`),
 FOREIGN KEY (`sauceId`) REFERENCES `sauce` (`sauceId`),
-FOREIGN KEY (`pizzaSizeId`) REFERENCES `pizzaSize` (`pizzaSizeId`),
-FOREIGN KEY (`pizzaCheeseId`) REFERENCES `pizzaCheese` (`pizzaCheeseId`)
+FOREIGN KEY (`sizeId`) REFERENCES `size` (`sizeId`),
+FOREIGN KEY (`cheeseId`) REFERENCES `cheese` (`cheeseId`)
 );
 
 CREATE TABLE `preDefinedPizza`
@@ -115,6 +124,19 @@ CREATE TABLE `preDefinedPizza`
 PRIMARY KEY (`preDefinedPizzaId`),
 FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`)
 );
+
+
+CREATE TABLE `topping_pizza`
+(
+`topping_pizzaId` integer NOT NULL auto_increment,
+`toppingId` integer NOT NULL,
+`customPizzaId` integer NOT NULL,
+`side` varchar(45) NOT NULL ,
+PRIMARY KEY (`topping_pizzaId`),
+FOREIGN KEY (`toppingId`) REFERENCES `topping` (`toppingId`),
+FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`)
+);
+
 
 CREATE TABLE `orders`
 (
@@ -151,6 +173,60 @@ create table `orderDetails`
    FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`)
 );
 
+--Inserts
+insert into `crust` (`price`,`name`) values 
+(0, 'Original Hand Tossed'),
+(0, 'Thin crust'),
+(0,'Gluten free');
+
+insert into `topping` (`price`,`name`) values 
+(0.25, 'Pepperoni'),
+(0.50, 'Sausage'),
+(0.75,'Ham'),
+(0.25, 'Chicken'),
+(0.50, 'Brooklin Pepperoni'),
+(0.75,'Beef'),
+(0.25, 'Anchovy'),
+(0.50, 'Pinapple'),
+(0.75,'Avocado'),
+(0.25, 'Tomato'),
+(0.50, 'Dried Tomato'),
+(0.75,'Champignon'),
+(0.25, 'Parsley'),
+(0.50, 'Basil'),
+(0.75,'Onion'),
+(0.25, 'Garlic'),
+(0.50, 'Banana Pepper'),
+(0.75,'Jalapeno'),
+(0.75,'Provolone');
+
+insert into `size` (`name`, `price`) values
+('Medium',5.00),
+('Large',6.00),
+('Extra Large',8.00),
+('Small',4.00),
+('2 pieces',2.00);
+
+
+insert into `cheese` (`name`, `price`) values
+('None',0),
+('Mozzarela',1),
+('Gouda',1),
+('Manchego',1),
+('Cheddar',1),
+('Camembert',1),
+('Parmesan',1),
+('Asiago',1),
+('Gorgonzola',1);
+
+insert into `sauce` (`name`, `price`) values
+('none',0),
+('Pizza Sauce',2.00),
+('BBQ Sauce',2.00),
+('Alfredo Sauce',2.00),
+('Hearty Marinara Sauce',2.00),
+('Ranch Dressing',2.00),
+('Garlic Parmesan Sauce',2.00);
 
 
 
