@@ -1,6 +1,9 @@
 <?php
 require_once("../common/template/header.php");
 
+session_start();
+$_SESSION['currentPage'] = 'customPizza3'; 
+
 $db_conn = new mysqli('localhost', 'group3user', 'Test123!', 'pizzadb');
 if ($db_conn->connect_errno) {
     die("Could not connect to database server \n Error: " . $db_conn->connect_errno . "\n Report: " . $db_conn->connect_error . "\n");

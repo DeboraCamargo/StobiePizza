@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['currentPage'] = 'start'; 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

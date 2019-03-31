@@ -1,6 +1,7 @@
 <?php 
 require_once("../common/template/header.php");
-$_SESSION['currentPage'] = 
+
+// database
 $db_conn = new mysqli('localhost', 'group3user', 'Test123!', 'pizzadb');
 if ($db_conn->connect_errno) {
     die("Could not connect to database server \n Error: " . $db_conn->connect_errno . "\n Report: " . $db_conn->connect_error . "\n");
@@ -32,16 +33,43 @@ if ($rs->num_rows > 0) {
         array_push($arr_crust, $obj);
     }
 }
+// The session starts here
+session_start();
 
+if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza1') {
+    //Cancelling
+    if (isset($_POST["back"])) {
+        header("Location: index.php");
+        die();
+    }
 
+    if (isset($_POST["next"])) {
+        $pizza = $_SESSION["makingPizza"];
+        $pizza->sizeId = $_POST["size"];
+        $pizza->crustId = $_POST["crust"];
+        header("Location: custompizza2.php");
+        die();
+    } else {
+        // if it stays on the same page - like f5
+        $pizza = $_SESSION["makingPizza"];
+    }
+} else if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza2') {
+    $pizza = $_SESSION["makingPizza"];
+} else {
+    $pizza = new stdClass();
+    $_SESSION["makingPizza"] = $pizza;
+    $pizza->sizeId = $arr_size[0]->id;
+    $pizza->crustId = $arr_crust[0]->id;
+}
 
+$_SESSION['currentPage'] = 'customPizza1';
 ?>
 
 <link rel="stylesheet" href="custompizza.css">
 
 <div class="cmodal">
     <div class="cmodal-content">
-        <form>
+        <form method="POST">
             <div class="container">
                 <div class="row">
                     <section class="col-6" id="pizza-size">
@@ -53,7 +81,7 @@ if ($rs->num_rows > 0) {
                             ?>
 
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="radio" name="size" value='<?php echo $size->id ?>'>
+                            <input class="form-check-input" type="radio" name="size" value='<?php echo $size->id ?>' <?php echo $size->id == $pizza->sizeId ? "checked" : "" ?>>
                             <label class="form-check-label" for="size">
                                 <?php echo $size->name ?>
                             </label>
@@ -73,12 +101,13 @@ if ($rs->num_rows > 0) {
                             ?>
 
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="radio" name="crust" value='<?php echo $crust->id ?>'>
+                            <input class="form-check-input" type="radio" name="crust" value='<?php echo $crust->id ?>' <?php echo $crust->id == $pizza->crustId ? "checked" : "" ?>>
                             <label class="form-check-label" for="crust">
                                 <?php echo $crust->name ?>
                             </label>
                         </div>
                         <?php
+
                     }
                     ?>
 
@@ -86,9 +115,8 @@ if ($rs->num_rows > 0) {
                 </div>
             </div>
             <div class="controls">
-                <button type="button" class="btn btn-secondary">Cancel</button>
-                <button type="button" class="btn btn-secondary btn-success">Toppings</button>
-
+                <button type="" name="back" class="btn btn-secondary">Cancel</button>
+                <button type="submit" name="next" class="btn btn-secondary btn-success">Toppings</button>
             </div>
         </form>
     </div>
