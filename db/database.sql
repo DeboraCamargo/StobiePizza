@@ -108,6 +108,7 @@ CREATE TABLE `customPizza`
  `sizeId`   integer  NOT NULL ,
  `crustId`   integer  NOT NULL ,
  `cheeseId` integer NOT NULL ,
+ `specialInstructions` varchar(100),
 PRIMARY KEY (`customPizzaId`),
 FOREIGN KEY (`toppingId`) REFERENCES `topping` (`toppingId`),
 FOREIGN KEY (`crustId`) REFERENCES `crust` (`crustId`),

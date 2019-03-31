@@ -13,65 +13,95 @@ if ($db_conn->connect_errno) {
             <form>
                 <div class="container">
                     <div class="row">
-                        <section class="col-6" id="pizza-size">
-                            <h2>Choose your size</h2>
+                        <section class="col-6" id="pizza-cheese">
+                            <h2>Choose your cheese</h2>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                 <label class="form-check-label" for="exampleRadios1">
-                                    Extra Large
+                                    None
                                 </label>
                             </div>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                 <label class="form-check-label" for="exampleRadios2">
-                                    Large
+                                    Light
                                 </label>
                             </div>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
                                 <label class="form-check-label" for="exampleRadios3">
-                                    Medium
+                                    Normal
                                 </label>
                             </div>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
                                 <label class="form-check-label" for="exampleRadios3">
-                                    Small
+                                    Extra
                                 </label>
                             </div>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
                                 <label class="form-check-label" for="exampleRadios3">
-                                    2 pieces
+                                   Double
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                <label class="form-check-label" for="exampleRadios3">
+                                    Triple
                                 </label>
                             </div>
                         </section>
 
-                        <section class="col-6" id="pizza-crust">
+                        <section class="col-6" id="pizza-sauce">
                             <h2>Choose your crust</h2>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                                 <label class="form-check-label" for="exampleRadios1">
-                                    Original Hand Tossed
+                                    None
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                                <label class="form-check-label" for="exampleRadios1">
+                                   Pizza Sauce
                                 </label>
                             </div>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
                                 <label class="form-check-label" for="exampleRadios2">
-                                    Thin crust
+                                    BBQ Sauce
                                 </label>
                             </div>
                             <div class="form-group form-check">
                                 <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
                                 <label class="form-check-label" for="exampleRadios3">
-                                    Gluten free
+                                    Alfredo Sauce
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                <label class="form-check-label" for="exampleRadios3">
+                                    Hearty Marinada Sauce
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                <label class="form-check-label" for="exampleRadios3">
+                                    Ranch Dressing
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+                                <label class="form-check-label" for="exampleRadios3">
+                                   Garlic Parmesan Sauce
                                 </label>
                             </div>
                         </section>
                     </div>
                 </div>
                 <div class="controls">
-                    <button type="button" class="btn btn-secondary">Cancel</button>
+                    <button type="button" class="btn btn-secondary">Back</button>
                     <button type="button" class="btn btn-secondary btn-success">Toppings</button>
 
                 </div>
