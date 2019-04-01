@@ -103,14 +103,12 @@ PRIMARY KEY (`cheeseId`)
 CREATE TABLE `customPizza`
 (
  `customPizzaId` integer NOT NULL auto_increment,
- `toppingId`   integer NOT NULL ,
  `sauceId`     integer NOT NULL ,
  `sizeId`   integer  NOT NULL ,
  `crustId`   integer  NOT NULL ,
  `cheeseId` integer NOT NULL ,
  `specialInstructions` varchar(100),
 PRIMARY KEY (`customPizzaId`),
-FOREIGN KEY (`toppingId`) REFERENCES `topping` (`toppingId`),
 FOREIGN KEY (`crustId`) REFERENCES `crust` (`crustId`),
 FOREIGN KEY (`sauceId`) REFERENCES `sauce` (`sauceId`),
 FOREIGN KEY (`sizeId`) REFERENCES `size` (`sizeId`),

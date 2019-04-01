@@ -36,6 +36,15 @@ if ($rs->num_rows > 0) {
 // The session starts here
 session_start();
 
+function findById($arr, $id) {
+    foreach($arr as $item) {
+        if($item->id == $id) {
+            return $item;
+        }
+    }
+    return null;
+}
+
 if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza1') {
     //Cancelling
     if (isset($_POST["back"])) {
@@ -45,8 +54,8 @@ if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza1
 
     if (isset($_POST["next"])) {
         $pizza = $_SESSION["makingPizza"];
-        $pizza->sizeId = $_POST["size"];
-        $pizza->crustId = $_POST["crust"];
+        $pizza->size = findById($arr_size, $_POST["size"]);
+        $pizza->crust = findById($arr_crust, $_POST["crust"]);
         header("Location: custompizza2.php");
         die();
     } else {
@@ -58,8 +67,8 @@ if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza1
 } else {
     $pizza = new stdClass();
     $_SESSION["makingPizza"] = $pizza;
-    $pizza->sizeId = $arr_size[0]->id;
-    $pizza->crustId = $arr_crust[0]->id;
+    $pizza->size = $arr_size[0];
+    $pizza->crust = $arr_crust[0];
 }
 
 $_SESSION['currentPage'] = 'customPizza1';
@@ -81,7 +90,7 @@ $_SESSION['currentPage'] = 'customPizza1';
                             ?>
 
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="radio" name="size" value='<?php echo $size->id ?>' <?php echo $size->id == $pizza->sizeId ? "checked" : "" ?>>
+                            <input class="form-check-input" type="radio" name="size" value='<?php echo $size->id ?>' <?php echo $size->id == $pizza->size->id ? "checked" : "" ?>>
                             <label class="form-check-label" for="size">
                                 <?php echo $size->name ?>
                             </label>
@@ -101,7 +110,7 @@ $_SESSION['currentPage'] = 'customPizza1';
                             ?>
 
                         <div class="form-group form-check">
-                            <input class="form-check-input" type="radio" name="crust" value='<?php echo $crust->id ?>' <?php echo $crust->id == $pizza->crustId ? "checked" : "" ?>>
+                            <input class="form-check-input" type="radio" name="crust" value='<?php echo $crust->id ?>' <?php echo $crust->id == $pizza->crust->id ? "checked" : "" ?>>
                             <label class="form-check-label" for="crust">
                                 <?php echo $crust->name ?>
                             </label>
@@ -115,7 +124,7 @@ $_SESSION['currentPage'] = 'customPizza1';
                 </div>
             </div>
             <div class="controls">
-                <button type="" name="back" class="btn btn-secondary">Cancel</button>
+                <button type="submit" name="back" class="btn btn-secondary">Cancel</button>
                 <button type="submit" name="next" class="btn btn-secondary btn-success">Toppings</button>
             </div>
         </form>

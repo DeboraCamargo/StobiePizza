@@ -10,6 +10,11 @@
     margin: auto;
 }
 
+.cmodal-content2{
+    width: 900px;
+    margin: auto;
+}
+
 .controls button{
     width: 150px;
 }
@@ -18,7 +23,11 @@
     text-align: right;
 }
 
-#pizza-crust #pizza-sauce #non-meat-toppings{
+#pizza-crust #pizza-sauce{
   border-left: black solid 1px;
 }
 
+.topping{
+    border: 1px solid red;
+    border-radius: 5px;
+}

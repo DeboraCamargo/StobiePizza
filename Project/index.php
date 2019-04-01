@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['currentPage'] = 'start'; 
+// session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -44,11 +45,11 @@ $_SESSION['currentPage'] = 'start';
             <img src="./img/logo.png" alt="Stobie’s Pizza logo" class="logo">
             <img src="./img/logo.png" alt="Stobie’s Pizza logo" class="logo-black">
             <ul class="main-nav">
-                <li><a href="#">Food delivery</a></li>
-                <li><a href="#">Deal</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="custompizza.php">Customise</a></li>
+                <li><a href="cart.php"><ion-icon name="cart"></ion-icon> (<?php echo count($_SESSION["cart"]); ?>)</a></li>
                 <li><a href="#">Sign up</a></li>
+                <li><a href="custompizza.php">Pizza Builder</a></li>
+                <li><a href="#">Specialties</a></li>
+                <li><a href="#">Deals</a></li>
             </ul>
         </div>
     </nav>
@@ -72,7 +73,7 @@ $_SESSION['currentPage'] = 'start';
     <div class="row">
         <div class="col-1  box">
             <ion-icon name="ios-infinite"></ion-icon>
-            <h3>Up to 365 days/year</h3>
+            <h3>24/7 Whenever you need</h3>
             <p>Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
             </p>
 
@@ -163,15 +164,15 @@ $_SESSION['currentPage'] = 'start';
         <div class="col span-1-of-2">
             <div class="works-step">
                 <div>1</div>
-                <p>Choose the subscription plan that best fits your needs and sign up today.</p>
+                <p>Create an account</p>
             </div>
             <div class="works-step">
                 <div>2</div>
-                <p>	Order your delicious meal using our mobile app or website. Or you can even call us!</p>
+                <p>	Choose your pizza</p>
             </div>
             <div class="works-step">
                 <div>3</div>
-                <p>Enjoy your meal after less than 20 minutes. See you the next time!</p>
+                <p>Order it</p>
             </div>
             <a href="#" class="btn-app"><img src="./img/download-app.png" alt="App store Button"></a>
             <a href="#" class="btn-app"><img src="./img/download-app-android.png" alt="Play store Button"></a>
@@ -255,7 +256,7 @@ $_SESSION['currentPage'] = 'start';
         </div>
     </div>
 </section>
-<section class="section-testimonials">
+<!-- <section class="section-testimonials">
     <div class="row">
         <h2>Our customers can't live without us</h2>
     </div>
@@ -279,9 +280,9 @@ $_SESSION['currentPage'] = 'start';
             </blockquote>
         </div>
     </div>
-</section>
+</section> -->
 
-<section class="section-plans">
+<!-- <section class="section-plans">
     <div class="row">
         <h2>Start eating yummy Pizza today</h2>
     </div>
@@ -349,7 +350,7 @@ $_SESSION['currentPage'] = 'start';
         </div>
 
     </div>
-</section>
+</section> -->
 
 <section class="section-form">
     <div class="row">
@@ -421,7 +422,7 @@ $_SESSION['currentPage'] = 'start';
         <div class="col span-1-0f-2">
             <ul class="footer-nav">
                 <li><a href="#">About us</a></li>
-                <li><a href="#">Bolg </a></li>
+                <li><a href="#">Blog </a></li>
                 <li><a href="#">Press</a></li>
                 <li><a href="#">ios App</a></li>
                 <li><a href="#">Android App</a></li>
