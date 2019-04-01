@@ -12,6 +12,7 @@ $_SESSION['currentPage'] = 'start';
     <link rel="stylesheet" type="text/css" href="./css/grid.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/queries.css">
+<!--<link rel="stylesheet" type="text/css" href="./css/queries.css">-->
 
     <!--<link rel="stylesheet" type="text/css" href="./css/ionicons.min.css">-->
 
