@@ -85,7 +85,7 @@ h2:after{
 /*----------------------------------------------------------*/
 
 header{
-    background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)),url(resources/img/hero.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)),url(../img/five.jpg);
     background-size:cover;
     background-position:center;
     height: 100vh;
