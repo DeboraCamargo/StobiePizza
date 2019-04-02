@@ -46,7 +46,7 @@ $_SESSION['currentPage'] = 'start';
             <img src="./img/logo.png" alt="Stobie’s Pizza logo" class="logo">
             <img src="./img/logo.png" alt="Stobie’s Pizza logo" class="logo-black">
             <ul class="main-nav"> 
-                <li><a href="cart.php"><ion-icon name="cart"></ion-icon> (<?php echo (count($_SESSION["cart"]));?>)</a></li>
+                <li><a href="cart.php"><ion-icon name="cart"></ion-icon> (<?php if (isset($_SESSION["cart"])){ echo (count($_SESSION["cart"]));}else{echo '0';}?>)</a></li>
                 <li><a href="#">Sign up</a></li>
                 <li><a href="custompizza.php">Pizza Builder</a></li>
                 <li><a href="#">Specialties</a></li>
