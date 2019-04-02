@@ -25,9 +25,10 @@ if ($rs->num_rows > 0) {
 // The session starts here
 session_start();
 
-function findById($arr, $id) {
-    foreach($arr as $item) {
-        if($item->id == $id) {
+function findById($arr, $id)
+{
+    foreach ($arr as $item) {
+        if ($item->id == $id) {
             return $item;
         }
     }
@@ -62,15 +63,15 @@ if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza3
     }
 
     if (isset($_POST["cart"])) {
-        if(isset($_SESSION["cart"])) {
+        if (isset($_SESSION["cart"])) {
             $cart_pizzas = $_SESSION["cart"];
         } else {
             $cart_pizzas = array();
         }
-        
+
         array_push($cart_pizzas, $pizza);
         unset($_SESSION["makingPizza"]);
-        
+
         $_SESSION["cart"] = $cart_pizzas;
         header("Location: cart.php");
         die();
@@ -88,13 +89,13 @@ if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza3
     }
 }
 
-foreach($arr_topping as $topping) {
+foreach ($arr_topping as $topping) {
     $topping->selected = false;
     $topping->side = 0;
-    foreach($pizza->toppings as $topping_in_pizza) {
-        if($topping_in_pizza->topping->id == $topping->id) {
+    foreach ($pizza->toppings as $topping_in_pizza) {
+        if ($topping_in_pizza->topping->id == $topping->id) {
             $topping->selected = true;
-            $topping->side= $topping_in_pizza->side;
+            $topping->side = $topping_in_pizza->side;
         }
     }
 }
@@ -121,7 +122,7 @@ $_SESSION['currentPage'] = 'customPizza3';
                             <div class="topping col-4">
                                 <div class="row">
                                     <div class="form-group form-check">
-                                        <input class="form-check-input" type="checkbox" name="toppings[]" value='<?php echo $topping->id ?>' <?php echo $topping->selected ? "checked" : "" ?>>
+                                        <input class="form-check-input" id="topping" onclick="chooseTopping(this);" type="checkbox" name="toppings[]" value='<?php echo $topping->id ?>' <?php echo $topping->selected ? "checked" : "" ?>>
                                         <label class="form-check-label" for="toppings">
                                             <?php echo $topping->name ?>
                                         </label>
@@ -129,21 +130,21 @@ $_SESSION['currentPage'] = 'customPizza3';
                                 </div>
                                 <div class="row">
                                     <div class="form-group form-check col-4">
-                                        <input class="form-check-input" type="radio" name='topping_<?php echo $topping->id ?>' value="1" <?php echo $topping->side == 1 ? "checked" : "" ?>>
+                                        <input class="form-check-input" id="side-r" type="radio" name='topping_<?php echo $topping->id ?>' value="1" <?php echo $topping->side == 1 ? "checked" : "" ?> disabled>
                                         <label class="form-check-label" for="side">
                                             Right <i class="fas fa-arrow-circle-right"></i>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-check col-4">
-                                        <input class="form-check-input" type="radio" name='topping_<?php echo $topping->id ?>' value="2" <?php echo $topping->side == 2 ? "checked" : "" ?>>
+                                        <input class="form-check-input" id="side-l" type="radio" name='topping_<?php echo $topping->id ?>' value="2" <?php echo $topping->side == 2 ? "checked" : "" ?> disabled>
                                         <label class="form-check-label" for="side">
                                             Left <i class="fas fa-arrow-circle-left"></i>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-check col-4">
-                                        <input class="form-check-input" type="radio" name='topping_<?php echo $topping->id ?>' value="3" <?php echo $topping->side == 3 ? "checked" : "" ?>>
+                                        <input class="form-check-input" id="side-all" type="radio" name='topping_<?php echo $topping->id ?>' value="3" <?php echo $topping->side == 3 ? "checked" : "" ?> disabled>
                                         <label class="form-check-label" for="side">
                                             All <i class="fas fa-pizza-slice"></i>
                                         </label>
@@ -178,4 +179,19 @@ $_SESSION['currentPage'] = 'customPizza3';
 </div>
 <?php
 require_once("../common/template/footer.php");
-?> 
+?>
+
+<script>
+    function chooseTopping(el) {
+        console.log("input[type=radio name="+'topping_'+el.value+"]");
+        if(el.checked){
+            $("input[name="+'topping_'+el.value+"]").attr('disabled', false);
+            $("input[name="+'topping_'+el.value+"][value=3]").prop('checked', true);
+
+
+        }else{
+            $("input[name="+'topping_'+el.value+"]").attr('disabled', true);
+            $("input[name="+'topping_'+el.value+"]").prop('checked', false);
+        }
+    }
+</script> 
