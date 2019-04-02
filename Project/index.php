@@ -51,6 +51,7 @@ $_SESSION['currentPage'] = 'start';
                 <li><a href="custompizza.php">Pizza Builder</a></li>
                 <li><a href="#">Specialties</a></li>
                 <li><a href="#">Deals</a></li>
+                <li><a href="#">My account</a></li>
             </ul>
         </div>
     </nav>
