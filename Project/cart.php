@@ -31,16 +31,20 @@ function getSideText($side_code)
     return "Both";
 }
 ?>
-<?php 
-
-if (count($cart) == 0) {
-    echo "Your cart is empty";
-} else {
-    ?>
 <link rel="stylesheet" href="custompizza.css">
 <div class="cmodal">
     <div class="cmodal-content2">
         <form method="POST" id="forminho">
+            <?php 
+
+            if (count($cart) == 0) {
+                echo "Your cart is empty"; ?>
+
+                <button type="submit" name="homePage" class="btn btn-secondary">Home Page</button>
+                <?php
+            } else {
+                ?>
+
             <?php 
             foreach ($cart as $i => $pizza) {
                 ?>
