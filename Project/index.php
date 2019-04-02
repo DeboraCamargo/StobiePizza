@@ -8,6 +8,7 @@ $_SESSION['currentPage'] = 'start';
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/grid.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
@@ -36,7 +37,6 @@ $_SESSION['currentPage'] = 'start';
     <script src="./js/jquery.waypoints.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
-
     <title>Stobie’s Pizza</title>
 </head>
 <body>
