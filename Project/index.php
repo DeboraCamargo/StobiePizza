@@ -52,16 +52,16 @@ $_SESSION['currentPage'] = 'start';
 		         <li><a href="profile.php">Profile</a></li>
                 <li><a href="custompizza.php">Pizza Builder</a></li>
    		        <li><a href="ourpizzas.php">Classic Pizza's</a></li>
-                <li><a href="#">Specialties</a></li>
-                <li><a href="#">Deals</a></li>
+                <!-- <li><a href="#">Specialties</a></li>
+                <li><a href="#">Deals</a></li> -->
             </ul>
         </div>
     </nav>
-<
     <div class="text-box">
 <br><br>
-        <h1>Welcome to Stobie's Pizza <br><span class="user"> <?= $_SESSION['firstName'] ?>   </span>
-	<span class="user"> <?= $_SESSION['lastName'] ?>    </span><br><br/> Our meals are super healthy</h1>
+        <h1>Welcome to Stobie's Pizza <br><span class="user"><?if (isset($_SESSION["firstName"])){ echo $_SESSION['firstName'];}else{echo 'User';} ?> </span>
+      
+	<span class="user"> <?if (isset($_SESSION["lastName"])){ echo $_SESSION['lastName'];}else{echo 'User';} ?></span><br><br/> Our meals are super healthy</h1>
         <a class="btn btn-full"  href="#">View Menu </a>
         <a class="btn btn-ghost" href="#" >Show me more </a>
     </div>
