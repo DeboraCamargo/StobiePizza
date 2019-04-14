@@ -68,6 +68,7 @@ if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza3
         } else {
             $cart_pizzas = array();
         }
+         $pizza->price = calculatePizzaPrice($pizza);
 
         array_push($cart_pizzas, $pizza);
         unset($_SESSION["makingPizza"]);
@@ -98,6 +99,11 @@ foreach ($arr_topping as $topping) {
             $topping->side = $topping_in_pizza->side;
         }
     }
+}
+
+function calculatePizzaPrice($pizza){
+    //TODO calculate pizza price
+    return 13;
 }
 
 $_SESSION['currentPage'] = 'customPizza3';

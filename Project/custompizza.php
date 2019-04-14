@@ -69,6 +69,7 @@ if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza1
     $_SESSION["makingPizza"] = $pizza;
     $pizza->size = $arr_size[0];
     $pizza->crust = $arr_crust[0];
+    $pizza->isPreDefined = false;
 }
 
 $_SESSION['currentPage'] = 'customPizza1';

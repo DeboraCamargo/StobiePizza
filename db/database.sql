@@ -12,8 +12,9 @@ GRANT all privileges ON pizzadb.* TO 'group3user'@'::1' IDENTIFIED BY 'Test123!'
 
 USE pizzadb;
 
-DROP TABLE IF EXISTS `orderDetails`;
-DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `order_pizza`;
+DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `order_info`;
 DROP TABLE IF EXISTS `userLogin`;
 DROP TABLE IF EXISTS `Profile`;
 DROP TABLE IF EXISTS `address`;
@@ -40,7 +41,7 @@ PRIMARY KEY (`addressId`)
 CREATE TABLE `Profile`
 (
  `profile_id`   integer NOT NULL auto_increment ,
-  `addressId`   integer NOT NULL ,
+ `addressId`   integer NOT NULL ,
  `email`        varchar(100) NOT NULL ,
  `firstName`    varchar(100) NOT NULL ,
  `lastName`     varchar(100) NOT NULL ,
@@ -49,10 +50,11 @@ PRIMARY KEY (`profile_id`),
 FOREIGN KEY (`addressId`) REFERENCES `address` (`addressId`)
 );
 
+
 CREATE TABLE `userLogin`
 (
  `userId`     integer NOT NULL auto_increment,
-  `profile_id` integer NOT NULL,
+ `profile_id` integer NOT NULL,
  `login`      varchar(20) NOT NULL unique,
  `password`   varchar(20) NOT NULL,
  `rememberme` bit NOT NULL ,
@@ -94,8 +96,8 @@ PRIMARY KEY (`sizeId`)
 
 create table `cheese`
 (
-`cheeseId` integer NOT NULL auto_increment,
-`name`    varchar(45) NOT NULL ,
+ `cheeseId` integer NOT NULL auto_increment,
+ `name`    varchar(45) NOT NULL ,
  `price` decimal not null,
 PRIMARY KEY (`cheeseId`)
 );
@@ -107,7 +109,6 @@ CREATE TABLE `customPizza`
  `sizeId`   integer  NOT NULL ,
  `crustId`   integer  NOT NULL ,
  `cheeseId` integer NOT NULL ,
- `specialInstructions` varchar(100),
 PRIMARY KEY (`customPizzaId`),
 FOREIGN KEY (`crustId`) REFERENCES `crust` (`crustId`),
 FOREIGN KEY (`sauceId`) REFERENCES `sauce` (`sauceId`),
@@ -136,47 +137,45 @@ FOREIGN KEY (`toppingId`) REFERENCES `topping` (`toppingId`),
 FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`)
 );
 
-
-CREATE TABLE `orders`
-(
- `ordersId` integer NOT NULL auto_increment,
- `customPizzaId` integer,
-  `preDefinedPizzaId` integer,
- `price` decimal NOT NULL ,
- `specialInstructions` varchar(200),
-PRIMARY KEY (`ordersId`),
-FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`),
-FOREIGN KEY (`preDefinedPizzaId`) REFERENCES `preDefinedPizza` (`preDefinedPizzaId`)
-
-);
-
 create table `payment`
 (
-`paymentId` integer not null auto_increment,
-`methodName` varchar(30) not null,
-PRIMARY KEY (`paymentId`)
+ `paymentId` integer not null,
+ `methodName` varchar(30) not null,
+ PRIMARY KEY (`paymentId`)
 );
 
-create table `orderDetails`
+create table `order_info`
 (
- `orderDetailsId` integer NOT NULL auto_increment,
- `ordersId` integer NOT NULL ,
- `profile_id`    integer NOT NULL ,
- `paymentId` integer NOT NULL ,
- `deliveryMethod` varchar(45) NOT NULL ,
- `orderTiming` datetime,
-  `total`  decimal NOT NULL ,
-   PRIMARY KEY (`orderDetailsId`),
-   FOREIGN KEY (`profile_id`) REFERENCES `Profile` (`profile_id`),
-   FOREIGN KEY (`ordersId`) REFERENCES `orders` (`ordersId`),
-   FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`)
+ `orderId` integer NOT NULL auto_increment,
+ `profile_id` integer NOT NULL ,
+ `paymentId` integer NOT NULL,
+ `is_delivery` bit NOT NULL ,
+--  `orderTiming` datetime,
+ `total`  decimal NOT NULL,
+  PRIMARY KEY (`orderId`),
+  FOREIGN KEY (`profile_id`) REFERENCES `Profile` (`profile_id`),
+  FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`)
+);
+
+CREATE TABLE `order_pizza`
+(
+ `order_pizza_id` integer NOT NULL auto_increment,
+ `customPizzaId` integer,
+ `preDefinedPizzaId` integer,
+ `price` decimal NOT NULL ,
+ `orderId` integer NOT NULL ,
+ `specialInstructions` varchar(200),
+PRIMARY KEY (`order_pizza_id`),
+FOREIGN KEY (`orderId`) REFERENCES `order_info` (`orderId`),
+FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`),
+FOREIGN KEY (`preDefinedPizzaId`) REFERENCES `preDefinedPizza` (`preDefinedPizzaId`)
 );
 
 --Inserts
 insert into `crust` (`price`,`name`) values 
 (0, 'Original Hand Tossed'),
 (0, 'Thin crust'),
-(0,'Gluten free');
+(0, 'Gluten free');
 
 insert into `topping` (`price`,`name`) values 
 (0.25, 'Pepperoni'),
@@ -227,5 +226,10 @@ insert into `sauce` (`name`, `price`) values
 ('Ranch Dressing',2.00),
 ('Garlic Parmesan Sauce',2.00);
 
+insert into `payment` (`paymentId`, `methodName`) values
+(1, 'Cash'),
+(2, 'Credit on deliver'),
+(3, 'Debit on deliver');
 
-
+insert into address(streetName,numberAdd,postalcode,city,province) values('bla', 'bla','bla', 'bla', 'bla');
+insert into Profile(addressId,email,firstName,lastName,phonecontact) values (1, 'bla', 'bla','bla', 'bla');

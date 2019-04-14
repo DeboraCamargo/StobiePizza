@@ -10,6 +10,10 @@ if (isset($_POST["homePage"])) {
     die();
 }
 
+if (isset($_POST["checkout"])) {
+    header("Location: checkoutpizza.php");
+    die();
+}
 
 if (isset($_SESSION["cart"])) {
     $cart = $_SESSION["cart"];
@@ -73,7 +77,7 @@ function getSideText($side_code)
             <?php 
         }
         ?>
-            <button type="submit" class="btn btn-primary">Checkout</button>
+            <button type="submit" name="checkout" class="btn btn-primary">Checkout</button>
             <button type="submit" name="homePage" class="btn btn-secondary">Home Page</button>
         </form>
     </div>
