@@ -8,12 +8,10 @@ $_SESSION['currentPage'] = 'start';
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  
     <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/grid.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/queries.css">
-<!--<link rel="stylesheet" type="text/css" href="./css/queries.css">-->
 
     <!--<link rel="stylesheet" type="text/css" href="./css/ionicons.min.css">-->
 
@@ -37,7 +35,9 @@ $_SESSION['currentPage'] = 'start';
     <script src="./js/jquery.waypoints.min.js"></script>
     <script src="./js/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
     <title>Stobie’s Pizza</title>
+    
 </head>
 <body>
 <header>
@@ -46,19 +46,22 @@ $_SESSION['currentPage'] = 'start';
             <img src="./img/logo.png" alt="Stobie’s Pizza logo" class="logo">
             <img src="./img/logo.png" alt="Stobie’s Pizza logo" class="logo-black">
             <ul class="main-nav"> 
-                <li><a href="cart.php"><ion-icon name="cart"></ion-icon> (<?php if (isset($_SESSION["cart"])){ echo (count($_SESSION["cart"]));}else{echo '0';}?>)</a></li>
-                <li><a href="#">Sign up</a></li>
+            <li><a href="cart.php"><ion-icon name="cart"></ion-icon> (<?php if (isset($_SESSION["cart"])){ echo (count($_SESSION["cart"]));}else{echo '0';}?>)</a></li>
+                <li><a href="login.php">Log In</a></li>
+                <li><a href="signup.php">Sign up</a></li>
+		         <li><a href="profile.php">Profile</a></li>
                 <li><a href="custompizza.php">Pizza Builder</a></li>
+   		        <li><a href="ourpizzas.php">Classic Pizza's</a></li>
                 <li><a href="#">Specialties</a></li>
                 <li><a href="#">Deals</a></li>
-                <li><a href="#">My account</a></li>
             </ul>
         </div>
     </nav>
-
+<
     <div class="text-box">
-
-        <h1>Welcome to Stobie's Pizza website<br/> Our meals are super healthy</h1>
+<br><br>
+        <h1>Welcome to Stobie's Pizza <br><span class="user"> <?= $_SESSION['firstName'] ?>   </span>
+	<span class="user"> <?= $_SESSION['lastName'] ?>    </span><br><br/> Our meals are super healthy</h1>
         <a class="btn btn-full"  href="#">View Menu </a>
         <a class="btn btn-ghost" href="#" >Show me more </a>
     </div>
