@@ -68,7 +68,7 @@ if (isset($_SESSION["currentPage"]) && $_SESSION['currentPage'] == 'customPizza3
         } else {
             $cart_pizzas = array();
         }
-         $pizza->price = calculatePizzaPrice($pizza);
+        $pizza->price = calculatePizzaPrice($pizza);
 
         array_push($cart_pizzas, $pizza);
         unset($_SESSION["makingPizza"]);
@@ -101,9 +101,22 @@ foreach ($arr_topping as $topping) {
     }
 }
 
-function calculatePizzaPrice($pizza){
-    //TODO calculate pizza price
-    return 13;
+function calculatePizzaPrice($pizza)
+{
+    $price = $pizza->size->price;
+    $price += $pizza->crust->price;
+    $price += $pizza->cheese->price;
+    $price += $pizza->sauce->price;
+
+    foreach ($pizza->toppings as $topping_in_pizza) {
+        // echo $topping_in_pizza->topping->name .': ' . $topping_in_pizza->topping->price;
+        if ($topping_in_pizza->side == 3) {
+            $price += $topping_in_pizza->topping->price;
+        } else {
+            $price += $topping_in_pizza->topping->price / 2;
+        }
+    }
+    return  $price;
 }
 
 $_SESSION['currentPage'] = 'customPizza3';
@@ -128,33 +141,47 @@ $_SESSION['currentPage'] = 'customPizza3';
                             <div class="topping col-4">
                                 <div class="row">
                                     <div class="form-group form-check">
-                                        <input class="form-check-input" id="topping" onclick="chooseTopping(this);" type="checkbox" name="toppings[]" value='<?php echo $topping->id ?>' <?php echo $topping->selected ? "checked" : "" ?>>
+                                        <input class="form-check-input" id="topping" onclick="chooseTopping(this);"
+                                            type="checkbox" name="toppings[]" value='<?php echo $topping->id ?>'
+                                            <?php echo $topping->selected ? "checked" : "" ?>>
                                         <label class="form-check-label" for="toppings">
                                             <?php echo $topping->name ?>
                                         </label>
                                     </div>
                                 </div>
                                 <div class="row">
+
                                     <div class="form-group form-check col-4">
-                                        <input class="form-check-input" id="side-r" type="radio" name='topping_<?php echo $topping->id ?>' value="1" <?php echo $topping->side == 1 ? "checked" : "" ?> disabled>
+                                        <input class="form-check-input" id="side-all" type="radio"
+                                            name='topping_<?php echo $topping->id ?>' value="3"
+                                            <?php echo $topping->side == 3 ? "checked" : "" ?> disabled>
                                         <label class="form-check-label" for="side">
-                                            Right <i class="fas fa-arrow-circle-right"></i>
+                                            All <i class="fas fa-pizza-slice"></i>
                                         </label>
                                     </div>
 
+
                                     <div class="form-group form-check col-4">
-                                        <input class="form-check-input" id="side-l" type="radio" name='topping_<?php echo $topping->id ?>' value="2" <?php echo $topping->side == 2 ? "checked" : "" ?> disabled>
+                                        <input class="form-check-input" id="side-l" type="radio"
+                                            name='topping_<?php echo $topping->id ?>' value="2"
+                                            <?php echo $topping->side == 2 ? "checked" : "" ?> disabled>
                                         <label class="form-check-label" for="side">
                                             Left <i class="fas fa-arrow-circle-left"></i>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-check col-4">
-                                        <input class="form-check-input" id="side-all" type="radio" name='topping_<?php echo $topping->id ?>' value="3" <?php echo $topping->side == 3 ? "checked" : "" ?> disabled>
+                                        <input class="form-check-input" id="side-r" type="radio"
+                                            name='topping_<?php echo $topping->id ?>' value="1"
+                                            <?php echo $topping->side == 1 ? "checked" : "" ?> disabled>
                                         <label class="form-check-label" for="side">
-                                            All <i class="fas fa-pizza-slice"></i>
+                                            Right <i class="fas fa-arrow-circle-right"></i>
                                         </label>
                                     </div>
+
+
+
+
                                 </div>
                             </div>
 
@@ -169,7 +196,8 @@ $_SESSION['currentPage'] = 'customPizza3';
                     <section class="col-12" id="pizza-especialInstructions">
                         <h2>Especial Requests</h2>
                         <div class="form-group form-check">
-                            <textarea class="form-control" aria-label="With textarea" name="specialInstructions"><?php echo $pizza->specialInstructions ?></textarea>
+                            <textarea class="form-control" aria-label="With textarea"
+                                name="specialInstructions"><?php echo $pizza->specialInstructions ?></textarea>
                         </div>
 
                     </section>
@@ -188,16 +216,16 @@ require_once("../common/template/footer.php");
 ?>
 
 <script>
-    function chooseTopping(el) {
-        console.log("input[type=radio name="+'topping_'+el.value+"]");
-        if(el.checked){
-            $("input[name="+'topping_'+el.value+"]").attr('disabled', false);
-            $("input[name="+'topping_'+el.value+"][value=3]").prop('checked', true);
+function chooseTopping(el) {
+    console.log("input[type=radio name=" + 'topping_' + el.value + "]");
+    if (el.checked) {
+        $("input[name=" + 'topping_' + el.value + "]").attr('disabled', false);
+        $("input[name=" + 'topping_' + el.value + "][value=3]").prop('checked', true);
 
 
-        }else{
-            $("input[name="+'topping_'+el.value+"]").attr('disabled', true);
-            $("input[name="+'topping_'+el.value+"]").prop('checked', false);
-        }
+    } else {
+        $("input[name=" + 'topping_' + el.value + "]").attr('disabled', true);
+        $("input[name=" + 'topping_' + el.value + "]").prop('checked', false);
     }
-</script> 
+}
+</script>

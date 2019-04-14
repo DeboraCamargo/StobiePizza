@@ -66,14 +66,14 @@ CREATE TABLE `sauce`
 (
  `sauceId` integer NOT NULL auto_increment ,
  `name`    varchar(45) NOT NULL ,
- `price` decimal not null,
+ `price` decimal(4, 2) not null,
 PRIMARY KEY (`sauceId`)
 );
 
 CREATE TABLE `crust`
 (
  `crustId` integer NOT NULL auto_increment ,
- `price` decimal not null,
+ `price` decimal(4, 2) not null,
  `name`      varchar(45) NOT NULL ,
 PRIMARY KEY (`crustId`)
 );
@@ -81,7 +81,7 @@ PRIMARY KEY (`crustId`)
 CREATE TABLE `topping`
 (
  `toppingId` integer NOT NULL auto_increment ,
- `price` decimal not null,
+ `price` decimal(4, 2) not null,
  `name`      varchar(45) NOT NULL ,
 PRIMARY KEY (`toppingId`)
 );
@@ -90,7 +90,7 @@ create table `size`
 (
 `sizeId` integer NOT NULL auto_increment,
  `name`    varchar(45) NOT NULL ,
- `price` decimal not null,
+ `price` decimal(4, 2) not null,
 PRIMARY KEY (`sizeId`)
 );
 
@@ -98,7 +98,7 @@ create table `cheese`
 (
  `cheeseId` integer NOT NULL auto_increment,
  `name`    varchar(45) NOT NULL ,
- `price` decimal not null,
+ `price` decimal(4, 2) not null,
 PRIMARY KEY (`cheeseId`)
 );
 
@@ -121,6 +121,7 @@ CREATE TABLE `preDefinedPizza`
  `preDefinedPizzaId` integer NOT NULL auto_increment,
   `customPizzaId` integer NOT NULL ,
   `name` varchar(30) NOT NULL ,
+  `price` decimal(5, 2) not null,
 PRIMARY KEY (`preDefinedPizzaId`),
 FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`)
 );
@@ -151,7 +152,7 @@ create table `order_info`
  `paymentId` integer NOT NULL,
  `is_delivery` bit NOT NULL ,
 --  `orderTiming` datetime,
- `total`  decimal NOT NULL,
+ `total`  decimal(9, 2) NOT NULL,
   PRIMARY KEY (`orderId`),
   FOREIGN KEY (`profile_id`) REFERENCES `Profile` (`profile_id`),
   FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`)
@@ -162,7 +163,7 @@ CREATE TABLE `order_pizza`
  `order_pizza_id` integer NOT NULL auto_increment,
  `customPizzaId` integer,
  `preDefinedPizzaId` integer,
- `price` decimal NOT NULL ,
+ `price` decimal(5, 2) NOT NULL ,
  `orderId` integer NOT NULL ,
  `specialInstructions` varchar(200),
 PRIMARY KEY (`order_pizza_id`),

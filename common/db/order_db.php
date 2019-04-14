@@ -4,7 +4,7 @@ $db_conn = new mysqli('localhost', 'group3user', 'Test123!', 'pizzadb');
 
 function saveOrder($order)
 {
-    //var_dump($order);
+    var_dump($order);
     
     # VALIDATE STUFF
     // database
