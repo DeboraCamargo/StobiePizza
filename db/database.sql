@@ -18,6 +18,7 @@ DROP TABLE IF EXISTS `order_info`;
 DROP TABLE IF EXISTS `userLogin`;
 DROP TABLE IF EXISTS `Profile`;
 DROP TABLE IF EXISTS `address`;
+DROP TABLE IF EXISTS `topping_pizza`;
 DROP TABLE IF EXISTS `customPizza`;
 DROP TABLE IF EXISTS `preDefinedPizza`;
 DROP TABLE IF EXISTS `cheese`;
@@ -159,20 +160,6 @@ create table `order_info`
   FOREIGN KEY (`paymentId`) REFERENCES `payment` (`paymentId`)
 );
 
-CREATE TABLE `order_pizza`
-(
- `order_pizza_id` integer NOT NULL auto_increment,
- `customPizzaId` integer,
- `preDefinedPizzaId` integer,
- `price` decimal(5, 2) NOT NULL ,
- `orderId` integer NOT NULL ,
- `specialInstructions` varchar(200),
-PRIMARY KEY (`order_pizza_id`),
-FOREIGN KEY (`orderId`) REFERENCES `order_info` (`orderId`),
-FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`),
-FOREIGN KEY (`preDefinedPizzaId`) REFERENCES `preDefinedPizza` (`preDefinedPizzaId`)
-);
-
 create table ourpizza
 (
 id  int(4) not null auto_increment,
@@ -183,6 +170,22 @@ price decimal(5, 2) not null,
 img varchar(200) not null,
 primary key(id)
 );
+
+CREATE TABLE `order_pizza`
+(
+ `order_pizza_id` integer NOT NULL auto_increment,
+ `customPizzaId` integer,
+ `ourpizzaid` integer,
+ `price` decimal(5, 2) NOT NULL ,
+ `orderId` integer NOT NULL ,
+ `specialInstructions` varchar(200),
+PRIMARY KEY (`order_pizza_id`),
+FOREIGN KEY (`orderId`) REFERENCES `order_info` (`orderId`),
+FOREIGN KEY (`customPizzaId`) REFERENCES `customPizza` (`customPizzaId`),
+FOREIGN KEY (`ourpizzaid`) REFERENCES `ourpizza` (`id`)
+);
+
+
 
 create table users
 (
@@ -263,8 +266,10 @@ insert into `sauce` (`name`, `price`) values
 
 insert into `payment` (`paymentId`, `methodName`) values
 (1, 'Cash'),
-(2, 'Credit on deliver'),
-(3, 'Debit on deliver');
+(2, 'Credit'),
+(3, 'Debit'),
+(4, 'Gift');
+
 
 insert into address(streetName,numberAdd,postalcode,city,province) values('bla', 'bla','bla', 'bla', 'bla');
 insert into Profile(addressId,email,firstName,lastName,phonecontact) values (1, 'bla', 'bla','bla', 'bla');

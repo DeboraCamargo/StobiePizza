@@ -15,7 +15,9 @@ function saveOrder($order)
         $db_conn->begin_transaction();
 
         foreach( $order->items  as $item){
-            $item->id=savePizza($item,$db_conn);   
+            if(!$item->isPredefined) {
+                $item->id=savePizza($item,$db_conn);   
+            }
         }
 
         saveOrderDetails($order, $db_conn);
@@ -36,6 +38,8 @@ function saveOrder($order)
             $order->total
         );
 
+        echo $query;
+
         $db_conn->query($query);
         $newOrderId=$db_conn->insert_id;
 
@@ -53,17 +57,19 @@ function saveOrder($order)
                 $pizza->id,
                 $pizza->price,
                 $orderId,
-                $pizza->specialInstructions
+                isset($pizza->specialInstructions)? "'".$pizza->specialInstructions."'" : 'null'
             );
     
         }else{
             $query = sprintf(
-                "INSERT INTO order_pizza(preDefinedPizzaId, price, orderId, specialInstructions) values (%s, %s, %s, %s)",
+                "INSERT INTO order_pizza(ourpizzaid, price, orderId, specialInstructions) values (%s, %s, %s, %s)",
                 $pizza->id,
                 $pizza->price,
                 $orderId,
-                $pizza->specialInstructions
+                isset($pizza->specialInstructions)? "'".$pizza->specialInstructions."'" : 'null'
             );
+
+            echo $query;
         }
         $db_conn->query($query);
     }
