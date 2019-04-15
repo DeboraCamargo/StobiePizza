@@ -100,23 +100,23 @@ function asMoney($number) {
                         <div class="col-sm-8">
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="Cash" name="paymentMethod" value='0' <?php echo $delivery == 0 ? "checked" : "" ?>>
-                                <label for="Cash" style="font-size:20px;"> <i class="far fa-money-bill-alt" style="color:green"></i> Cash</label>
+                                <input class="form-check-input" type="radio" id="Cash" name="paymentMethod" value='1' <?php echo $delivery == 0 ? "checked" : "" ?>>
+                                <label for="Cash"> <i class="far fa-money-bill-alt" style="color:green"></i> Cash</label>
                             </div>
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="CreditCard" name="paymentMethod" value='1' <?php echo $delivery == 1 ? "checked" : "" ?>>
-                                <label for="CreditCard"style="font-size:20px;"> <i class="fab fa-cc-visa" style="color:blue"></i> <i class="fab fa-cc-mastercard" style="color:orange"></i> Credit Card</label>
+                                <input class="form-check-input" type="radio" id="CreditCard" name="paymentMethod" value='2' <?php echo $delivery == 1 ? "checked" : "" ?>>
+                                <label for="CreditCard"> <i class="fab fa-cc-visa" style="color:blue"></i> <i class="fab fa-cc-mastercard" style="color:orange"></i> Credit Card</label>
                             </div>
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="Debit" name="paymentMethod" value='2' <?php echo $delivery == 2 ? "checked" : "" ?>>
-                                <label for="Debit"style="font-size:20px;"><i class="fas fa-credit-card" style="color:blue"></i> Debit</label>
+                                <input class="form-check-input" type="radio" id="Debit" name="paymentMethod" value='3' <?php echo $delivery == 2 ? "checked" : "" ?>>
+                                <label for="Debit"><i class="fas fa-credit-card" style="color:blue"></i> Debit</label>
                             </div>
                             <br>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="Gift" name="paymentMethod" value='3' <?php echo $delivery == 3 ? "checked" : "" ?>>
-                                <label for="Gift"style="font-size:20px;"><ion-icon name="gift" style="color:red"></ion-icon> Gift Card</label>
+                                <input class="form-check-input" type="radio" id="Gift" name="paymentMethod" value='4' <?php echo $delivery == 3 ? "checked" : "" ?>>
+                                <label for="Gift"><ion-icon name="gift" style="color:red"></ion-icon> Gift Card</label>
                             </div>
                             <br><br>
                         </div>
