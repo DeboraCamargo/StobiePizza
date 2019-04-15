@@ -45,7 +45,7 @@ function asMoney($number) {
 }
 
 ?>
-<link rel="stylesheet" href="custompizza.css">
+<link rel="stylesheet" href="custompizza2.css">
 </head>
 
 <body>
