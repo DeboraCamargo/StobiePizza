@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("../common/template/header.php");
 
 // database
@@ -131,6 +131,6 @@ $_SESSION['currentPage'] = 'customPizza1';
         </form>
     </div>
 </div>
-<?php 
+<?php
 require_once("../common/template/footer.php");
-?> 
+?>

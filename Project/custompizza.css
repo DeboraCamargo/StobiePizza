@@ -5,6 +5,11 @@ body {
       height: 100vh;
       background-attachment: fixed;
 }
+
+h1, h2, h3, h4, h5, a, p {
+  color: white;
+}
+
 .cmodal{
     display: flex;
     justify-content: center;
@@ -15,6 +20,7 @@ body {
 .cmodal-content{
     width: 700px;
     margin: auto;
+    background-color: #fff;
 }
 
 .cmodal-content2{
