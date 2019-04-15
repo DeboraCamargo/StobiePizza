@@ -1,5 +1,5 @@
 <!doctype html>
-<?php 
+<?php
 session_start();
 $_SESSION['message']='';
 
@@ -17,20 +17,8 @@ $_SESSION['message']='';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    
+    
     </style>
     <!-- Custom styles for this template -->
     <link href="css/signup.css" rel="stylesheet">
@@ -160,10 +148,13 @@ $_SESSION['message']='';
 -->
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Create an Account</button>
-      </form>
+        <br>
+       <li><a href="login.php"><button class="btn btn-primary btn-lg btn-block">Already a Member? Click to Sign In!</button>
 
-  
 
+
+
+       <div>
   <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2019 Application Project Group 3</p>
     <ul class="list-inline">
@@ -173,6 +164,10 @@ $_SESSION['message']='';
     </ul>
   </footer>
 </div>
+<!-- The Modal -->
+
+  
+
 
 
 <?php function validate_fields(){
@@ -264,28 +259,26 @@ $password = $db_conn->real_escape_string($_POST['password']);
 $address = $db_conn->real_escape_string($_POST['address']);
 
 
-	
+$_SESSION['id'] = $id;
 $_SESSION['firstName'] = $firstName ;
 $_SESSION['lastName'] = $lastName ;
 $_SESSION['email'] = $email ;
 $_SESSION['address'] = $address ;
 
- $qry = mysqli_query ($db_conn, "SELECT * FROM users WHERE firstName='".$firstName."' AND lastName='".$lastName."' AND email='".$email."' AND address = '".$address."'");
+ $qry = mysqli_query ($db_conn, "SELECT * FROM users WHERE firstName='".$firstName."' AND lastName='".$lastName."' AND email='".$email."'");
         if(mysqli_num_rows($qry) > 0){
 
-            $_SESSION['message']= "Account already exists";
+           echo  "Account already exists! <br/>";
         }else{
 
 
 $qry = "INSERT INTO users (firstName, lastName, email, password, address) VALUES ('".$firstName."','".$lastName."','".$email."', MD5('".$password."'), '".$address."');";
 }
 $db_conn->query($qry);
-if($db_conn->query($qry) == true){
-$_SESSION['message'] ='Registration Succesful! Added your data to the Database!';
 
 $db_conn->close();
 header('Location: profile.php');
-}
+
 }
 
 ?>
