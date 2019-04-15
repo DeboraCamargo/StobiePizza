@@ -37,6 +37,35 @@ $_SESSION['currentPage'] = 'start';
     <script src="./js/script.js"></script>
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
     <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of ottawa
+  var  ottawa = {lat: 45.41117, lng:-75.69812}; 
+  var toronto = {lat:43.653908,lng:-79.384293};
+  var vancouver = {lat:49.246292,lng:-123.116226};
+  var montreal = {lat:45.516136,lng:-73.656830}
+
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 4.6, center: toronto});
+  
+  var marker0 = new google.maps.Marker({position: ottawa, map: map});
+  var marker1 = new google.maps.Marker({position: toronto, map: map});
+  var marker2 = new google.maps.Marker({position: vancouver, map: map});
+  var marker3 = new google.maps.Marker({position: montreal, map: map});
+
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIwcKb9GpuoAN3Nvj6OGkKJOqnxrLCLbI&callback=initMap">
+    </script>
+    <style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 100vh;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
     <title>Stobie’s Pizza</title>
     
 </head>
@@ -211,6 +240,9 @@ $_SESSION['currentPage'] = 'start';
                 <h3>Montreal</h3>
             </div>
         </div>
+    </section>
+    <section  class="cities">
+    <div id="map"></div>
     </section>
 
     <section class="section-form">
