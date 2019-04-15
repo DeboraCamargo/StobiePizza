@@ -48,6 +48,10 @@ if (isset($_POST["confirm"])) {
 
 $delivery = 0;
 
+function asMoney($number) {
+    return 'C$ ' . number_format($number, 2);
+}
+
 ?>
 <link rel="stylesheet" href="custompizza.css">
 <div class="cmodal">
@@ -62,10 +66,29 @@ $delivery = 0;
         } else {
             ?>
                 <div class="container">
+                    <h2 class="text-center mb-4">CHECK-OUT</h2>
+                    <h3 class="mb-4">Your order: </h3>
                     <div class="row">
-                        <div class="col-sm-12">
-                            <h2>Total: <?php echo 'C$ ' . number_format($total, 2); ?> </h2>
-                        </div>
+                        <table class="table">
+                            <?php
+                                $i=0;
+                                foreach($cart as $item) {   
+                                    $name = isset($item->isPreDefined) && !$item->isPreDefined ? "Custom Pizza #". ++$i : $item->name;
+                            ?>
+                            <tr>
+                                <td><?= $name ?></td>
+                                <td class="text-right"><?= asMoney($item->price) ?></td>
+                            </tr>
+                            <?php
+                                } 
+                            ?>
+                            <tfoot>
+                                <tr class="font-weight-bolder">
+                                    <td>TOTAL</td>
+                                    <td class="text-right"><?= asMoney($total) ?></td>
+                                </tr>
+                            </tfoot>
+                        </table>
                     </div>
 
                     <div class="form-group row">
