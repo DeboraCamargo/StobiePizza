@@ -38,7 +38,10 @@ if (isset($_POST["confirm"])) {
     if (saveOrder($order)) {
 
         $message = "SUCCESS";
-        echo "<script type='text/javascript'>alert('$message');</script>";
+        header("Location: checkoutFinalized.php");
+        $_SESSION["cart"] =  array();
+        die();
+
     } else {
 
         $message = "ERROR";
