@@ -97,8 +97,8 @@ function initMap() {
         <div class="text-box">
             <h1>Welcome to Stobie's Pizza <br><span class="user"> <?if (isset($_SESSION["firstName"])){ echo $_SESSION['firstName'];}else{echo 'User';} ?> </span>
                 <span class="user"> <?if (isset($_SESSION["lastName"])){ echo $_SESSION['lastName'];}else{echo 'User';} ?> </span> Our meals are super healthy</h1>
-            <a class="btn btn-full" href="#">View Menu </a>
-            <a class="btn btn-ghost" href="#">Show me more </a>
+            <a class="btn btn-full" href="ourpizzas.php">View Menu </a>
+            <a class="btn btn-ghost" href="custompizza.php">Show me more </a>
         </div>
 
     </header>
