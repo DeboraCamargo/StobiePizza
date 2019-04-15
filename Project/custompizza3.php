@@ -122,7 +122,7 @@ function calculatePizzaPrice($pizza)
 $_SESSION['currentPage'] = 'customPizza3';
 ?>
 
-<link rel="stylesheet" href="custompizza.css">
+<link rel="stylesheet" href="custompizza2.css">
 
 <div class="cmodal">
     <div class="cmodal-content2">

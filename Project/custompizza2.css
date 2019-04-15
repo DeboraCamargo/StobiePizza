@@ -1,0 +1,52 @@
+body {
+      background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)),url(img/three.jpg);
+      background-size:cover;
+      background-position:center;
+      height: 100vh;
+      background-attachment: fixed;
+      color: #fff;
+}
+
+h1, h2, h3, h4, h5, a, p {
+  color: white;
+}
+
+.cmodal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.cmodal-content{
+    width: 700px;
+    margin: auto;
+    background-color: #fff;
+}
+
+.cmodal-content2{
+    width: 900px;
+    margin: auto;
+}
+
+.controls button{
+    width: 150px;
+}
+.controls{
+    margin-top: 15px;
+    text-align: right;
+}
+
+#pizza-crust #pizza-sauce{
+  border-left: black solid 1px;
+}
+
+.topping{
+    border: 1px solid red;
+    border-radius: 5px;
+    color: #fff;
+}
+
+table tr td{
+    color: #fff;
+}

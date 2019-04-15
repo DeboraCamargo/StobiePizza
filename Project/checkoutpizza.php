@@ -56,7 +56,7 @@ function asMoney($number) {
 }
 
 ?>
-<link rel="stylesheet" href="custompizza.css">
+<link rel="stylesheet" href="custompizza2.css">
 <div class="cmodal">
     <div class="cmodal-content2">
         <form method="POST" id="checkout">
