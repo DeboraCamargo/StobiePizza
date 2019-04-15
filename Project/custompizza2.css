@@ -41,11 +41,14 @@ h1, h2, h3, h4, h5, a, p {
   border-left: black solid 1px;
 }
 
-.topping{
-    border: 1px solid red;
-    border-radius: 5px;
-    color: #fff;
-}
+  .topping{
+      background-color: #facf5a;
+      border: 2px solid #facf5a;
+      border-radius: 5px;
+      margin:10px;
+      color:black;
+  }
+
 
 table tr td{
     color: #fff;
