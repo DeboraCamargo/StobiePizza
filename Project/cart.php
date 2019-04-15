@@ -80,12 +80,14 @@ function asMoney($number) {
                                         <a href="#" onclick="removeFromCart(this, <?php echo $i ?>);"><i class="fas fa-trash-alt"></i></a>
                                     </div>
                                     <div class="col-sm-12">
-                                        <b>Size:</b> <?php echo $pizza->size->name ?> -
-                                        <b>Crust:</b> <?php echo $pizza->crust->name ?> -
-                                        <b>Cheese:</b> <?php echo $pizza->cheese->name ?> -
-                                        <b> Sauce:</b> <?php echo $pizza->sauce->name ?>
+                                        <?= isset($pizza->size) ? "<b>Size:</b> ". $pizza->size->name . " - ": "" ?>
+                                        <?= isset($pizza->crust) ? "<b>Crust:</b> ". $pizza->crust->name . " - ": "" ?>
+                                        <?= isset($pizza->cheese) ? "<b>Cheese:</b> ". $pizza->cheese->name . " - ": "" ?>
+                                        <?= isset($pizza->sauce) ? "<b>Sauce:</b> ". $pizza->sauce->name . " - ": "" ?>
                                     </div>
 
+                                    <?php if (isset($pizza->toppings)) { ?>
+                                    
                                     <div class="col-sm-12">
                                     <?php if (count($pizza->toppings) > 0) { ?>
                                         <b>Toppings: </b>
@@ -98,12 +100,14 @@ function asMoney($number) {
                                     <?php
                                     } ?>
                                     </div>
-                                    <div class="col-sm-12"> <b>Special instructions:</b> <?php echo $pizza->specialInstructions ?> </div>
+                                    <?php } ?>
+                                    <?php if (isset($pizza->specialInstructions)) { ?>
+                                        <div class="col-sm-12"> <b>Special instructions:</b> <?php echo $pizza->specialInstructions ?> </div>
+                                    <?php } ?>
                                 </div>
                             </td>
                         </tr>
-
-                        <?php
+                <?php
                     }
                 ?>
                 </table>

@@ -1,3 +1,57 @@
+<?php
+session_start();
+
+$db_conn = new mysqli('localhost', 'group3user', 'Test123!', 'pizzadb');
+if ($db_conn->connect_errno) {
+    die("Could not connect to database server \n Error: " . $db_conn->connect_errno . "\n Report: " . $db_conn->connect_error . "\n");
+}
+
+function findById($arr, $id) {
+  foreach($arr as $item) {
+      if($item->id == $id) {
+          return $item;
+      }
+  }
+  return null;
+}
+
+$arr_pizzas = array();
+
+$qry = "select id, pizza_name, pizza_description, pizza_cals, price, img from ourpizza;";
+$rs = $db_conn->query($qry);
+if ($rs->num_rows > 0) {
+    while ($row = $rs->fetch_assoc()) {
+        $obj = new stdClass();
+        $obj->id = $row['id'];
+        $obj->name = $row['pizza_name'];
+        $obj->description = $row['pizza_description'];
+        $obj->cals = $row['pizza_cals'];
+        $obj->price = $row['price'];
+        $obj->img = $row['img'];
+
+        array_push($arr_pizzas, $obj);
+    }
+}
+
+if(isset($_POST["order"])) {
+  $pizzaId = $_POST["pizzaId"];
+  $pizza = findById($arr_pizzas, $pizzaId);
+  $pizza->isPredefined = true;
+
+  if (isset($_SESSION["cart"])) {
+      $cart_pizzas = $_SESSION["cart"];
+  } else {
+      $cart_pizzas = array();
+  }
+
+  array_push($cart_pizzas, $pizza);
+  $_SESSION["cart"] = $cart_pizzas;
+  header("Location: cart.php");
+  die();
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,126 +100,29 @@
 
     <div class="container">
       <div class="row">
+        <?php
+          foreach($arr_pizzas as $pizza) {
+        ?>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/hawaiian.jpg">
-            <div class="card-body">
-              <h5 class="card-title">Hawaiian</h5>
-              <p class="card-text">Succulent pineapple and slices of ham topped with an extra layer of cheese.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/pepperoni.jpg">
-            <div class="card-body">
-              <h5 class="card-title">Pepperoni</h5>
-              <p class="card-text">Lots and lots of pepperoni topped with an extra layer of cheese.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/bbqchicken.jpg">
-            <div class="card-body">
-              <h5 class="card-title">BBQ Chicken</h5>
-              <p class="card-text">BBQ sauce and loaded with chicken, bacon, onions, green peppers and cheddar cheese.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/canadian.jpg">
-          <div class="card-body">
-            <h5 class="card-title">Canadian</h5>
-              <p class="card-text">Loads of pepperoni, fresh mushrooms, and smoked bacon, topped with an extra layer of premium mozzarella cheese.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/smokeymaplebacon.jpg">
-          <div class="card-body">
-              <h5 class="card-title">Smokey Maple Bacon</h5>
-              <p class="card-text">A Ranch Sauce base with a Mozzarella Cheese, fresh tomatoes, green peppers, all white-meat chicken and bacon.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/meatlovers.jpg">
-            <div class="card-body">
-              <h5 class="card-title">Meat Lovers</h5>
-              <p class="card-text">Slice after slice of pepperoni, ham, savory Italian sausage and ground beef topped with an extra layer of cheese.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/supreme.jpg">
-            <div class="card-body">
-              <h5 class="card-title">Supreme</h5>
-              <p class="card-text">Pepperoni, Italian sausage, fresh green peppers, fresh mushrooms and cheese.
-</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width="100%" height="225" src="img/vegeterian.jpg">
+            <form method="POST">
+              <input type="hidden" name="pizzaId" value="<?= $pizza->id?>" />
+              <img class="card-img-top" width="100%" height="225" src="img/<?= $pizza->img?>">
               <div class="card-body">
-                <h5 class="card-title">Vegeterian</h5>
-              <p class="card-text">A medley of fresh green peppers, onion, tomatoes, mushrooms, and olives.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
+                <h5 class="card-title"><?= $pizza->name ?></h5>
+                <p class="card-text"><?= $pizza->description ?></p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <button type="submit" class="btn btn-sm btn-primary" name="order">Order</button>
+                  <small class="text-muted">Cals <?= $pizza->cals?> per slice</small>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-<img class="card-img-top" width="100%" height="225" src="img/4cheese.jpg">
-            <div class="card-body">
-              <h5 class="card-title">4 Cheese</h5>
-              <p class="card-text">Covered with Feta, provolone, cheddar, and mozzarella cheese finished with oregano.</p>
-              <div class="d-flex justify-content-between align-items-center">
-                  <button type="button" class="btn btn-sm btn-primary">Order</button>
-                <small class="text-muted">Cals 210-310 per slice</small>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <?php 
+          }
+        ?>
       </div>
     </div>
 

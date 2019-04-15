@@ -76,7 +76,7 @@ function initMap() {
             <div class="row">
                 <img src="./img/logo.png" alt="Stobie’s Pizza logo" class="logo">
                 <ul class="main-nav">
-                    <!-- <li><a href="logout.php">Log Out</a></li> -->
+                   <li><a href="logout.php">Log Out</a></li>
                     <li><a href="cart.php">
                             <ion-icon name="cart"></ion-icon> (<?php if (isset($_SESSION["cart"])) {
                                                                     echo (count($_SESSION["cart"]));
