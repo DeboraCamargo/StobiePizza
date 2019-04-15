@@ -41,14 +41,14 @@ $_SESSION['currentPage'] = 'start';
 // Initialize and add the map
 function initMap() {
   // The location of ottawa
-  var  ottawa = {lat: 45.41117, lng:-75.69812}; 
+  var  ottawa = {lat: 45.41117, lng:-75.69812};
   var toronto = {lat:43.653908,lng:-79.384293};
   var vancouver = {lat:49.246292,lng:-123.116226};
   var montreal = {lat:45.516136,lng:-73.656830}
 
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 4.6, center: toronto});
-  
+
   var marker0 = new google.maps.Marker({position: ottawa, map: map});
   var marker1 = new google.maps.Marker({position: toronto, map: map});
   var marker2 = new google.maps.Marker({position: vancouver, map: map});
@@ -67,7 +67,7 @@ function initMap() {
        }
     </style>
     <title>Stobie’s Pizza</title>
-    
+
 </head>
 
 <body>
@@ -112,22 +112,21 @@ function initMap() {
 
         <div class="row">
             <div class="col-1  box">
-                <ion-icon name="ios-infinite"></ion-icon>
+                <ion-icon size="large" name="ios-infinite"></ion-icon>
                 <h3>24/7 Whenever you need</h3>
                 <p>Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
                 </p>
 
             </div>
             <div class="col-2 box">
-                <ion-icon name="ios-stopwatch"></ion-icon>
-
+                <ion-icon size="large" name="ios-stopwatch"></ion-icon>
                 <h3>Ready in 20 minutes</h3>
                 <p>All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
                 </p>
             </div>
 
         <div class="col-4 box box-final">
-                <ion-icon name="ios-cart"></ion-icon>
+            <ion-icon size="large" name="ios-cart"></ion-icon>
             <h3>Order anything!</h3>
             <p>We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals.
                 </p>

@@ -17,16 +17,34 @@ $_SESSION['message']='';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-    
-    
+    body{
+        background-image: linear-gradient(rgba(0, 0, 0,0.7),rgba(0, 0, 0,0.7)),url(img/five.jpg);
+        background-size:cover;
+        background-position:center;
+        height: 100vh;
+        background-attachment: fixed;
+    }
+    h1, h2, h3, h4, label, a, p {
+      color: #fff;
+    }
+    .heading-container{
+      margin-left: 120px;
+    }
+    .container {
+      max-width: 800px;
+      margin-left: 200px;
+    }
+
+    .lh-condensed { line-height: 1.25; }
+
     </style>
     <!-- Custom styles for this template -->
     <link href="css/signup.css" rel="stylesheet">
   </head>
   <body class="bg-light">
-    <div class="container">
-  <div class="py-5 text-center">
-    <img class="d-block mx-auto mb-4" src="images/logo.png" alt="" width="96" height="96">
+  <div class="container">
+  <div class="py-5 text-center heading-container">
+    <img class="d-block mx-auto mb-4" src="img/logo.png" alt="" width="130" height="130">
     <h2>Join Stobie's Pizza</h2>
     <p class="lead">The best way to enjoy pizza.</p>
   </div>
@@ -81,7 +99,7 @@ $_SESSION['message']='';
           <label for="password">Password</label>
           <input type="password" id="password" class="form-control" name='password' placeholder="Password" value="<?php echo $password; ?>" required>
           <div class="invalid-feedback">
-            Please enter your shipping address.
+            Please enter your password.
           </div>
         </div>
 
@@ -94,7 +112,7 @@ $_SESSION['message']='';
        </div>
 
 
-<?php } ?> 
+<?php } ?>
      <!--   <hr class="mb-4">
         <h4 class="mb-3">Payment</h4>
 
@@ -149,7 +167,7 @@ $_SESSION['message']='';
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Create an Account</button>
         <br>
-       <li><a href="login.php"><button class="btn btn-primary btn-lg btn-block">Already a Member? Click to Sign In!</button>
+       <button class="btn btn-primary btn-lg btn-block"><a href="login.php">Already a Member? Click to Sign In!</a></button>
 
 
 
@@ -166,7 +184,7 @@ $_SESSION['message']='';
 </div>
 <!-- The Modal -->
 
-  
+
 
 
 
@@ -184,8 +202,8 @@ $_SESSION['message']='';
 			}
 		}
     }
-		
-	
+
+
 	if (!isset($_POST['lastName'])){
 		$error_msg[] = "last Name field not defined";
 	} else if (isset($_POST['lastName'])){
@@ -211,7 +229,7 @@ $_SESSION['message']='';
 			}
 		}
 	}
-	
+
 	 if (!isset($_POST['password'])){
 		$error_msg[] = "password field is not defined";
 	} else if (isset($_POST['password'])){
@@ -224,7 +242,7 @@ $_SESSION['message']='';
 			}
 		}
 	}
-	
+
 	 if (!isset($_POST['address'])){
 		$error_msg[] = "address field is not defined";
 	} else if (isset($_POST['address'])){
@@ -241,7 +259,7 @@ $_SESSION['message']='';
 } ?>
 
 
-<?php 
+<?php
 function display_error(){
 
 }

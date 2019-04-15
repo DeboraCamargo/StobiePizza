@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stobie's Pizza Cart Page</title>
 <?php
 
 require_once("../common/template/header.php");
@@ -41,6 +46,9 @@ function asMoney($number) {
 
 ?>
 <link rel="stylesheet" href="custompizza.css">
+</head>
+
+<body>
 <div class="cmodal">
     <div class="cmodal-content2">
         <form method="POST" id="forminho">
@@ -49,6 +57,7 @@ function asMoney($number) {
             if (count($cart) == 0) {
                 echo "Your cart is empty"; ?>
 
+                <br><br>
                 <button type="submit" name="homePage" class="btn btn-secondary">Home Page</button>
             <?php
         } else {
@@ -76,11 +85,11 @@ function asMoney($number) {
                                         <b>Cheese:</b> <?php echo $pizza->cheese->name ?> -
                                         <b> Sauce:</b> <?php echo $pizza->sauce->name ?>
                                     </div>
-                                    
+
                                     <div class="col-sm-12">
                                     <?php if (count($pizza->toppings) > 0) { ?>
                                         <b>Toppings: </b>
-                                        
+
                                         <?php
                                         foreach ($pizza->toppings as $topping) {
                                             echo " " . $topping->topping->name . ' - ' . getSideText($topping->side) . ' side(s)';
@@ -93,7 +102,7 @@ function asMoney($number) {
                                 </div>
                             </td>
                         </tr>
-                        
+
                         <?php
                     }
                 ?>
@@ -120,3 +129,5 @@ function asMoney($number) {
         form.submit();
     }
 </script>
+</body>
+</html>
