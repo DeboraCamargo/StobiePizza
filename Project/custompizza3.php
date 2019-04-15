@@ -126,11 +126,13 @@ $_SESSION['currentPage'] = 'customPizza3';
 
 <div class="cmodal">
     <div class="cmodal-content2">
-        <form method="POST">
-            <h2 style="text-align: center;">Choose your toppings</h2>
-            <div class="container">
+        <form method="POST" class="topping-form">
+          <br><br>
+            <h2 class="text-light" style="text-align: center;">Choose your toppings</h2>
+            <br><br>
+            <div class="container ">
                 <div class="row">
-                    <section class="col-12">
+                    <section class="col-12 topping-section">
                         <div class="row">
                             <?php
                             for ($x = 0; $x < count($arr_topping); $x++) {
@@ -139,18 +141,18 @@ $_SESSION['currentPage'] = 'customPizza3';
                                 ?>
 
                             <div class="topping col-4">
-                                <div class="row">
+                                <div class="row topping-inside" style="margin-top:5px;">
                                     <div class="form-group form-check">
-                                        <input class="form-check-input" id="topping" onclick="chooseTopping(this);"
+                                        <input style="margin-left:1px;"class="form-check-input" id="topping" onclick="chooseTopping(this);"
                                             type="checkbox" name="toppings[]" value='<?php echo $topping->id ?>'
                                             <?php echo $topping->selected ? "checked" : "" ?>>
-                                        <label class="form-check-label" for="toppings">
+                                        <label style="margin-left:20px;"class="form-check-label" for="toppings">
                                             <?php echo $topping->name ?>
                                         </label>
                                     </div>
                                 </div>
-                                <div class="row">
 
+                                <div class="row">
                                     <div class="form-group form-check col-4">
                                         <input class="form-check-input" id="side-all" type="radio"
                                             name='topping_<?php echo $topping->id ?>' value="3"
@@ -179,9 +181,6 @@ $_SESSION['currentPage'] = 'customPizza3';
                                         </label>
                                     </div>
 
-
-
-
                                 </div>
                             </div>
 
@@ -194,7 +193,8 @@ $_SESSION['currentPage'] = 'customPizza3';
                     </section>
 
                     <section class="col-12" id="pizza-especialInstructions">
-                        <h2>Especial Requests</h2>
+                        <br><br>
+                        <h2 class="text-light">Special Requests</h2>
                         <div class="form-group form-check">
                             <textarea class="form-control" aria-label="With textarea"
                                 name="specialInstructions"><?php echo $pizza->specialInstructions ?></textarea>
@@ -206,8 +206,8 @@ $_SESSION['currentPage'] = 'customPizza3';
             <div class="controls">
                 <button type="submit" class="btn btn-secondary" name="back">Back</button>
                 <button type="submit" class="btn btn-secondary btn-success" name="cart">Add to cart</button>
-
             </div>
+            <br><br>
         </form>
     </div>
 </div>

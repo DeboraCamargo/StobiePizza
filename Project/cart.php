@@ -50,19 +50,19 @@ function asMoney($number) {
 
 <body>
 <div class="cmodal">
-    <div class="cmodal-content2">
+    <div class="cmodal-content2 text-light">
         <form method="POST" id="forminho">
-            <?php
+            <h2><?php
 
             if (count($cart) == 0) {
                 echo "Your cart is empty"; ?>
-
+              </h2>
                 <br><br>
                 <button type="submit" name="homePage" class="btn btn-secondary">Home Page</button>
             <?php
         } else {
             ?>
-                <h2 class="text-center mb-4"><ion-icon name="cart"></ion-icon> YOUR CART</h2>
+                <h2 class="text-center mb-4 text-light"><ion-icon name="cart"></ion-icon> YOUR CART</h2>
                 <table class="table">
                 <?php
                     $custom_index=0;
@@ -71,7 +71,7 @@ function asMoney($number) {
                     ?>
                         <tr>
                             <td>
-                                <div class="row mb-2">
+                                <div class="row mb-2 text-light">
                                     <div class="col-11">
                                         <h4><?= $name ?> - <?= asMoney($pizza->price) ?></h4>
                                         <!-- <h4><?= asMoney($pizza->price) ?></h4> -->
@@ -79,7 +79,7 @@ function asMoney($number) {
                                     <div class="col-1">
                                         <a href="#" onclick="removeFromCart(this, <?php echo $i ?>);"><i class="fas fa-trash-alt"></i></a>
                                     </div>
-                                    <div class="col-sm-12">
+                                    <div class="col-sm-12" >
                                         <b>Size:</b> <?php echo $pizza->size->name ?> -
                                         <b>Crust:</b> <?php echo $pizza->crust->name ?> -
                                         <b>Cheese:</b> <?php echo $pizza->cheese->name ?> -

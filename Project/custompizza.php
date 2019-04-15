@@ -80,11 +80,12 @@ $_SESSION['currentPage'] = 'customPizza1';
 <div class="cmodal">
     <div class="cmodal-content">
         <form method="POST">
-            <div class="container">
+            <div class="container inside-content">
                 <div class="row">
                     <section class="col-6" id="pizza-size">
-                        <h2>Choose your size</h2>
-
+                        <br><br><br>
+                        <h2 class="text-primary">Choose your size</h2>
+                        <br>
                         <?php
                         for ($x = 0; $x < count($arr_size); $x++) {
                             $size = $arr_size[$x];
@@ -104,7 +105,9 @@ $_SESSION['currentPage'] = 'customPizza1';
                     </section>
 
                     <section class="col-6" id="pizza-crust">
-                        <h2>Choose your crust</h2>
+                      <br><br><br>
+                        <h2 class="text-primary">Choose your crust</h2>
+                        <br>
                         <?php
                         for ($x = 0; $x < count($arr_crust); $x++) {
                             $crust = $arr_crust[$x];
@@ -125,8 +128,9 @@ $_SESSION['currentPage'] = 'customPizza1';
                 </div>
             </div>
             <div class="controls">
-                <button type="submit" name="back" class="btn btn-secondary">Cancel</button>
-                <button type="submit" name="next" class="btn btn-secondary btn-success">Toppings</button>
+              <br><br><br>
+                <button style="margin-right:10px;"type="submit" name="back" class="btn btn-secondary">Cancel</button>
+                <button style="margin-right:20px;"type="submit" name="next" class="btn btn-secondary btn-success">Toppings</button>
             </div>
         </form>
     </div>

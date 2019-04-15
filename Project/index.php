@@ -88,7 +88,7 @@ function initMap() {
                     <li><a href="login.php">Log In</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="custompizza.php">Pizza Builder</a></li>
-                    <li><a href="ourpizzas.php">Classic Pizza's</a></li>
+                    <li><a href="ourpizzas.php">Classic Pizzas</a></li>
 
                 </ul>
             </div>

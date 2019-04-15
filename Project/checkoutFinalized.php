@@ -13,9 +13,10 @@ if (isset($_POST["homePage"])) {
 <div class="cmodal">
     <div class="cmodal-content2">
         <form method="POST" id="checkout">
-          
-                <div class="container">
-                   <h1>Thanks for ordering with us</h1>
+
+                <div class="container text-light">
+                   <h1>Thanks for ordering with us.<br> Your Pizza will be ready in 20 minutes!</h1>
+                   <br><br>
                     <div class="row">
                         <div class="col-sm-12">
                             <button type="submit" name="homePage" class="btn btn-primary">Go to Home Page</button>

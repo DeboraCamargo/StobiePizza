@@ -6,10 +6,6 @@ body {
       background-attachment: fixed;
 }
 
-h1, h2, h3, h4, h5, a, p {
-  color: white;
-}
-
 .cmodal{
     display: flex;
     justify-content: center;
@@ -17,8 +13,16 @@ h1, h2, h3, h4, h5, a, p {
     width: 100vw;
     height: 100vh;
 }
+
+.inside-content{
+  margin-left: 10px;
+}
+
+
 .cmodal-content{
-    width: 700px;
+    border-radius: 25px;
+    height: 500px;
+    width: 800px;
     margin: auto;
     background-color: #fff;
 }
@@ -32,8 +36,9 @@ h1, h2, h3, h4, h5, a, p {
     width: 150px;
 }
 .controls{
-    margin-top: 15px;
+    margin-top: 0;
     text-align: right;
+    margin-right: 20px;
 }
 
 #pizza-crust #pizza-sauce{
@@ -41,6 +46,8 @@ h1, h2, h3, h4, h5, a, p {
 }
 
 .topping{
-    border: 1px solid red;
+    background-color: #facf5a;
+    border: 2px solid #facf5a;
     border-radius: 5px;
+    margin:10px;
 }

@@ -90,7 +90,8 @@ $_SESSION['currentPage'] = 'customPizza2';
             <div class="container">
                 <div class="row">
                     <section class="col-6" id="pizza-cheese">
-                        <h2>Choose your cheese</h2>
+                      <br>
+                        <h2 class="text-primary">Choose your cheese</h2>
                         <?php
                         for ($x = 0; $x < count($arr_cheese); $x++) {
                             $cheese = $arr_cheese[$x];
@@ -108,7 +109,8 @@ $_SESSION['currentPage'] = 'customPizza2';
                     </section>
 
                     <section class="col-6" id="pizza-sauce">
-                        <h2>Choose your sauce</h2>
+                      <br>
+                        <h2 class="text-primary">Choose your sauce</h2>
                         <?php
                         for ($x = 0; $x < count($arr_sauce); $x++) {
                             $sauce = $arr_sauce[$x];
@@ -137,4 +139,4 @@ $_SESSION['currentPage'] = 'customPizza2';
 </div>
 <?php
 require_once("../common/template/footer.php");
-?> 
+?>

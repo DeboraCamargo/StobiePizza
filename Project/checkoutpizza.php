@@ -68,14 +68,15 @@ function asMoney($number) {
             <?php
         } else {
             ?>
-                <div class="container">
-                    <h2 class="text-center mb-4">CHECK-OUT</h2>
+                <div class="container text-light">
+                  <br><br>
+                    <h1 style="margin-top:10px;"class="text-center mb-4">CHECK-OUT</h1>
                     <h3 class="mb-4">Your order: </h3>
                     <div class="row">
-                        <table class="table">
+                        <table style="font-size:20px;" class="table text-light">
                             <?php
                                 $i=0;
-                                foreach($cart as $item) {   
+                                foreach($cart as $item) {
                                     $name = isset($item->isPreDefined) && !$item->isPreDefined ? "Custom Pizza #". ++$i : $item->name;
                             ?>
                             <tr>
@@ -83,7 +84,7 @@ function asMoney($number) {
                                 <td class="text-right"><?= asMoney($item->price) ?></td>
                             </tr>
                             <?php
-                                } 
+                                }
                             ?>
                             <tfoot>
                                 <tr class="font-weight-bolder">
@@ -95,49 +96,55 @@ function asMoney($number) {
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" for="paymentMethod">Payment Method</label>
+                        <label style="font-size:25px;"class="col-sm-3 col-form-label" for="paymentMethod">Payment Method</label>
                         <div class="col-sm-8">
-
+                            <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" id="Cash" name="paymentMethod" value='0' <?php echo $delivery == 0 ? "checked" : "" ?>>
-                                <label for="Cash"> <i class="far fa-money-bill-alt" style="color:green"></i> Cash</label>
+                                <label for="Cash" style="font-size:20px;"> <i class="far fa-money-bill-alt" style="color:green"></i> Cash</label>
                             </div>
+                            <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" id="CreditCard" name="paymentMethod" value='1' <?php echo $delivery == 1 ? "checked" : "" ?>>
-                                <label for="CreditCard"> <i class="fab fa-cc-visa" style="color:blue"></i> <i class="fab fa-cc-mastercard" style="color:orange"></i> Credit Card</label>
+                                <label for="CreditCard"style="font-size:20px;"> <i class="fab fa-cc-visa" style="color:blue"></i> <i class="fab fa-cc-mastercard" style="color:orange"></i> Credit Card</label>
                             </div>
+                            <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" id="Debit" name="paymentMethod" value='2' <?php echo $delivery == 2 ? "checked" : "" ?>>
-                                <label for="Debit"><i class="fas fa-credit-card" style="color:blue"></i> Debit</label>
+                                <label for="Debit"style="font-size:20px;"><i class="fas fa-credit-card" style="color:blue"></i> Debit</label>
                             </div>
-
+                            <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" id="Gift" name="paymentMethod" value='3' <?php echo $delivery == 3 ? "checked" : "" ?>>
-                                <label for="Gift"><ion-icon name="gift" style="color:red"></ion-icon> Gift Card</label>
+                                <label for="Gift"style="font-size:20px;"><ion-icon name="gift" style="color:red"></ion-icon> Gift Card</label>
                             </div>
-
+                            <br><br>
                         </div>
                     </div>
 
 
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label" for="delivery">Delivery Method</label>
+                        <label style="font-size:25px;"class="col-sm-3 col-form-label" for="delivery">Delivery Method</label>
                         <div class="col-sm-8">
+                          <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" id="delivery_address" name="delivery" value='1' <?php echo $delivery == 1 ? "checked" : "" ?>>
-                                <label for="delivery_address"> <i class="fas fa-truck" style="color:purple"></i> Delivery</label>
+                                <label style="font-size:20px;"for="delivery_address"> <i class="fas fa-truck" style="color:purple"></i> Delivery</label>
                             </div>
+                            <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" id="pickup" name="delivery" value='0' <?php echo $delivery == 0 ? "checked" : "" ?>>
-                                <label for="pickup"><i class="fas fa-hand-holding" style="color:brown"></i> Pick-up</label>
+                                <label style="font-size:20px;"for="pickup"><i class="fas fa-hand-holding" style="color:brown"></i> Pick-up</label>
                             </div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <button type="submit" name="cart" class="btn btn-secondary">Back to Cart</button>
-                            <button type="submit" name="confirm" class="btn btn-primary">Confirm checkout</button>
+                          <br><br>
+                            <button style="margin-left:20px;"type="submit" name="cart" class="btn btn-secondary">Back to Cart</button>
+                            <button style="margin-left:20px;"type="submit" name="confirm" class="btn btn-primary">Confirm checkout</button>
+                            <br><br>
                         </div>
                     </div>
                 </div>
